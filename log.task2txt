@@ -1,0 +1,561 @@
+PS E:\C#\Homework\Task30> git init
+Initialized empty Git repository in E:/C#/Homework/Task30/.git/
+PS E:\C#\Homework\Task30> git add Program.cs
+PS E:\C#\Homework\Task30> git commit -m "ready to push"
+[master (root-commit) 9f29dfb] ready to push
+ 1 file changed, 23 insertions(+)
+PS E:\C#\Homework\Task30> git remote add origin https://github.com/Maounobuki/advanced-git.git
+PS E:\C#\Homework\Task30> git push
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS E:\C#\Homework\Task30> git push set --set-upstream origin master
+error: src refspec origin does not match any
+error: failed to push some refs to 'set'
+PS E:\C#\Homework\Task30> git push origin master
+Enumerating objects: 3, done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 640 bytes | 640.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Maounobuki/advanced-git/pull/new/master
+remote:
+To https://github.com/Maounobuki/advanced-git.git
+ * [new branch]      master -> master
+PS E:\C#\Homework\Task30> git pull
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 619 bytes | 61.00 KiB/s, done.
+From https://github.com/Maounobuki/advanced-git
+ * [new branch]      main       -> origin/main
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+PS E:\C#\Homework\Task30>
+ *  Журнал восстановлен 
+
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+    git branch --set-upstream-to=origin/<branch> master
+PS E:\C#\Homework\Task30> git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+PS E:\C#\Homework\Task30> git add Program.cs
+PS E:\C#\Homework\Task30> git commit -m "1st commit"
+[master 59a8dab] 1st commit
+ 1 file changed, 117 insertions(+), 1 deletion(-)
+PS E:\C#\Homework\Task30> git push master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+and the repository exists.
+PS E:\C#\Homework\Task30> git push       
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+PS E:\C#\Homework\Task30> git push origin master
+Enumerating objects: 5, done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.58 KiB | 1.58 MiB/s, done.
+To https://github.com/Maounobuki/advanced-git.git
+   9f29dfb..59a8dab  master -> master
+PS E:\C#\Homework\Task30> git add Program.cs        
+PS E:\C#\Homework\Task30> git commit -m "2d commit" 
+[master 5dbadc0] 2d commit
+ 1 file changed, 116 insertions(+)
+PS E:\C#\Homework\Task30> git add Program.cs       
+PS E:\C#\Homework\Task30> git commit -m "3rd commit"
+[master 215ab1d] 3rd commit
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (4/4), done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Maounobuki/advanced-git.git
+   59a8dab..215ab1d  master -> master
+PS E:\C#\Homework\Task30> git checkout     
+PS E:\C#\Homework\Task30> git ls      
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+PS E:\C#\Homework\Task30> git --help 
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+PS E:\C#\Homework\Task30> git log
+commit 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c (HEAD -> master, origin/master)
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:36:51 2023 +0300
+
+    3rd commit
+
+commit 5dbadc0aec9f35507a78f9da503d69bf90217480
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:35:54 2023 +0300
+
+    2d commit
+
+commit 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c (HEAD -> master, origin/master)
+Date:   Sat Dec 2 20:36:51 2023 +0300
+
+    3rd commit
+
+commit 5dbadc0aec9f35507a78f9da503d69bf90217480
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:35:54 2023 +0300
+
+    2d commit
+PS E:\C#\Homework\Task30> git reset --soft 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+PS E:\C#\Homework\Task30> git log
+commit 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c (HEAD -> master, origin/master)
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:36:51 2023 +0300
+
+    3rd commit
+
+commit 5dbadc0aec9f35507a78f9da503d69bf90217480
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:35:54 2023 +0300
+
+    2d commit
+
+
+
+
+
+
+
+
+
+
+PS E:\C#\Homework\Task30> git restore
+fatal: you must specify path(s) to restore
+PS E:\C#\Homework\Task30> git log
+commit 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c (HEAD -> master, origin/master)
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:36:51 2023 +0300
+
+    3rd commit
+
+commit 5dbadc0aec9f35507a78f9da503d69bf90217480
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:35:54 2023 +0300
+
+    2d commit
+
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:33:57 2023 +0300
+
+    1st commit
+
+commit 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 00:04:12 2023 +0300
+PS E:\C#\Homework\Task30> git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+PS E:\C#\Homework\Task30> git add Program.cs
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS E:\C#\Homework\Task30> git push origin master
+PS E:\C#\Homework\Task30> git reset --soft 5dbadc0aec9f35507a78f9da503d69bf90217480
+PS E:\C#\Homework\Task30> git push origin master
+ ! [rejected]        master -> master (non-fast-forward)
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS E:\C#\Homework\Task30> git restore
+fatal: you must specify path(s) to restore
+PS E:\C#\Homework\Task30> git restore 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+error: pathspec '215ab1dc1f186ed7d36410a1528c23a8ee20cd4c' did not match any file(s) known to git
+PS E:\C#\Homework\Task30> git checkout
+M       Program.cs
+PS E:\C#\Homework\Task30> git add Program.cs
+PS E:\C#\Homework\Task30> git checkout 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c  
+Note: switching to '215ab1dc1f186ed7d36410a1528c23a8ee20cd4c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+  git switch -c <new-branch-name>
+Or undo this operation with:
+  git switch -
+
+HEAD is now at 215ab1d 3rd commit
+M       Program.cs
+PS E:\C#\Homework\Task30> git checkout 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+HEAD is now at 215ab1d 3rd commit
+PS E:\C#\Homework\Task30> git restore 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c 
+error: pathspec '215ab1dc1f186ed7d36410a1528c23a8ee20cd4c' did not match any file(s) known to git
+PS E:\C#\Homework\Task30> git restore
+fatal: you must specify path(s) to restore
+PS E:\C#\Homework\Task30> git restore --staged Program.cs       
+PS E:\C#\Homework\Task30> git log
+commit 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c (HEAD, origin/master)
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:36:51 2023 +0300
+
+    3rd commit
+
+commit 5dbadc0aec9f35507a78f9da503d69bf90217480 (master)
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:35:54 2023 +0300
+
+    2d commit
+
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 20:33:57 2023 +0300
+
+
+commit 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+
+    ready to push
+PS E:\C#\Homework\Task30> git reset --mixed commit 59a8dab34d69be3ffe427a1abedba469f6b13791
+fatal: ambiguous argument 'commit': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+PS E:\C#\Homework\Task30> git reset --mixed 59a8dab34d69be3ffe427a1abedba469f6b13791       
+Unstaged changes after reset:
+M       Program.cs
+PS E:\C#\Homework\Task30> git restore --staged Program.cs
+PS E:\C#\Homework\Task30> git log
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+    1st commit
+
+commit 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 00:04:12 2023 +0300
+
+    ready to push
+PS E:\C#\Homework\Task30> git restore --staged Program.cs 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+error: pathspec '215ab1dc1f186ed7d36410a1528c23a8ee20cd4c' did not match any file(s) known to git
+PS E:\C#\Homework\Task30> git restore --staged Program.cs
+PS E:\C#\Homework\Task30> git log
+Date:   Sat Dec 2 20:33:57 2023 +0300
+
+    1st commit
+
+commit 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 00:04:12 2023 +0300
+
+    ready to push
+PS E:\C#\Homework\Task30> git restore -s@ -SW Program.cs
+PS E:\C#\Homework\Task30> git log
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+
+    1st commit
+
+commit 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Revert "ready to push"
+    ready to push
+PS E:\C#\Homework\Task30> git reset --hard 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+HEAD is now at 9f29dfb ready to push
+commit 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a (HEAD)
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 00:04:12 2023 +0300
+
+    ready to push
+PS E:\C#\Homework\Task30> git restore -s@ -SW Program.cs
+PS E:\C#\Homework\Task30> git revert 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+[detached HEAD 8e75366] Revert "ready to push"
+ delete mode 100644 Program.cs
+PS E:\C#\Homework\Task30> git revert 5dbadc0aec9f35507a78f9da503d69bf90217480
+CONFLICT (modify/delete): Program.cs deleted in HEAD and modified in parent of 5dbadc0 (2d commit).  Version parent of 5dbadc0 (2d commit) of Program.cs left in tree.
+error: could not revert 5dbadc0... 2d commit
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+PS E:\C#\Homework\Task30> git revert 5dbadc0aec9f35507a78f9da503d69bf90217480
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+PS E:\C#\Homework\Task30> git revert 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+PS E:\C#\Homework\Task30> git revert 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+PS E:\C#\Homework\Task30> git revert 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+PS E:\C#\Homework\Task30> git restore -s@ -SW Program.cs
+error: path 'Program.cs' is unmerged
+PS E:\C#\Homework\Task30> git revert 5dbadc0aec9f35507a78f9da503d69bf90217480
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+PS E:\C#\Homework\Task30> git add Program.cs
+PS E:\C#\Homework\Task30> git log
+commit 8e75366de2f09728c31033bf02032cb75b07ad6d (HEAD)
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+
+    Revert "ready to push"
+
+
+commit 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+Author: Maounobuki <116195152+Maounobuki@users.noreply.github.com>
+Date:   Sat Dec 2 00:04:12 2023 +0300
+
+    ready to push
+PS E:\C#\Homework\Task30> git commit -m "1st commit"
+[detached HEAD cab753c] 1st commit
+ 1 file changed, 139 insertions(+)
+HEAD detached from 215ab1d
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        Task30.csproj
+        Task30.sln
+        obj/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS E:\C#\Homework\Task30> git revert 5dbadc0aec9f35507a78f9da503d69bf90217480
+HEAD detached from 215ab1d
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        Task30.csproj
+        Task30.sln
+        obj/
+
+HEAD detached from 215ab1d
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        Task30.csproj
+        Task30.sln
+        obj/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS E:\C#\Homework\Task30> git commit -m "2d commit"
+HEAD detached from 215ab1d
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        Task30.csproj
+        Task30.sln
+        obj/
+
+PS E:\C#\Homework\Task30> git revert 5dbadc0aec9f35507a78f9da503d69bf90217480
+HEAD detached from 215ab1d
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        Task30.csproj
+        Task30.sln
+        obj/
+nothing added to commit but untracked files present (use "git add" to track)
+PS E:\C#\Homework\Task30> git revert 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+CONFLICT (modify/delete): Program.cs deleted in (empty tree) and modified in HEAD.  Version HEAD of Program.cs left in tree.
+error: could not revert 9f29dfb... ready to push
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       Program.cs
+PS E:\C#\Homework\Task30> git revert 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+PS E:\C#\Homework\Task30> git add Program.cs
+PS E:\C#\Homework\Task30> git revert 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+PS E:\C#\Homework\Task30> git revert 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+PS E:\C#\Homework\Task30> git restore -s@ -SW Program.cs
+PS E:\C#\Homework\Task30> git revert 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+Auto-merging Program.cs
+error: could not revert 215ab1d... 3rd commit
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+PS E:\C#\Homework\Task30>
+PS E:\C#\Homework\Task30> git commit -m "2d commit"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+U       Program.cs
+PS E:\C#\Homework\Task30> git add Program.cs
+PS E:\C#\Homework\Task30> git commit -m "2d commit"
+[detached HEAD b46a271] 2d commit
+PS E:\C#\Homework\Task30> git revert 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+Auto-merging Program.cs
+CONFLICT (content): Merge conflict in Program.cs
+error: could not revert 215ab1d... 3rd commit
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+error: you need to resolve your current index first
+Program.cs: needs merge
+PS E:\C#\Homework\Task30> git reflog
+b46a271 (HEAD) HEAD@{0}: commit: 2d commit
+cab753c HEAD@{1}: commit: 1st commit
+8e75366 HEAD@{2}: revert: Revert "ready to push"
+9f29dfb HEAD@{3}: reset: moving to 9f29dfb30b7f7d3f15eac2f9a091bc0409bf046a
+59a8dab HEAD@{4}: reset: moving to 59a8dab34d69be3ffe427a1abedba469f6b13791
+215ab1d (origin/master) HEAD@{5}: checkout: moving from master to 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+5dbadc0 (master) HEAD@{6}: reset: moving to 5dbadc0aec9f35507a78f9da503d69bf90217480
+215ab1d (origin/master) HEAD@{7}: reset: moving to 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+215ab1d (origin/master) HEAD@{8}: commit: 3rd commit
+59a8dab HEAD@{10}: commit: 1st commit
+9f29dfb HEAD@{11}: commit (initial): ready to push
+PS E:\C#\Homework\Task30> git revert 59a8dab
+error: Reverting is not possible because you have unmerged files.
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+error: Reverting is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: revert failed
+PS E:\C#\Homework\Task30> git add Program.cs
+PS E:\C#\Homework\Task30> git revert 215ab1d
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+PS E:\C#\Homework\Task30> git diff
+PS E:\C#\Homework\Task30> git reflog        
+b46a271 (HEAD) HEAD@{0}: commit: 2d commit
+cab753c HEAD@{1}: commit: 1st commit
+8e75366 HEAD@{2}: revert: Revert "ready to push"
+215ab1d (origin/master) HEAD@{5}: checkout: moving from master to 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+5dbadc0 (master) HEAD@{6}: reset: moving to 5dbadc0aec9f35507a78f9da503d69bf90217480
+215ab1d (origin/master) HEAD@{7}: reset: moving to 215ab1dc1f186ed7d36410a1528c23a8ee20cd4c
+215ab1d (origin/master) HEAD@{8}: commit: 3rd commit
+5dbadc0 (master) HEAD@{9}: commit: 2d commit
+59a8dab HEAD@{10}: commit: 1st commit
+9f29dfb HEAD@{11}: commit (initial): ready to push
+PS E:\C#\Homework\Task30> git checkout 215ab1d
+error: Your local changes to the following files would be overwritten by checkout:
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS E:\C#\Homework\Task30> git commit -m "2dа commit"
+[detached HEAD 06e8e67] 2dа commit
+ 1 file changed, 3 insertions(+)
+PS E:\C#\Homework\Task30> git checkout 215ab1d      
+Warning: you are leaving 4 commits behind, not connected to
+any of your branches:
+
+  06e8e67 2dа commit
+  b46a271 2d commit
+  cab753c 1st commit
+  8e75366 Revert "ready to push"
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 06e8e67
+
+HEAD is now at 215ab1d 3rd commit
+PS E:\C#\Homework\Task30> git add Program.cs        
+PS E:\C#\Homework\Task30> git commit -m "3rd commit"
+HEAD detached at 215ab1d
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vscode/
+        Task30.csproj
+        Task30.sln
+        obj/
+
+nothing added to commit but untracked files present (use "git add" to track)
